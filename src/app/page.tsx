@@ -20,8 +20,12 @@ export default function Home() {
                 <div className="max-w-6xl mx-auto px-6">
                     <div className="flex justify-between items-center h-16">
                         <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
-                                <span className="text-white text-sm font-bold">P</span>
+                            <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center relative overflow-hidden">
+                                {/* Cross shape */}
+                                <div className="absolute w-2 h-5 bg-white rounded-sm"></div>
+                                <div className="absolute w-5 h-2 bg-white rounded-sm"></div>
+                                {/* Dollar sign */}
+                                <span className="relative text-emerald-500 text-[10px] font-bold">$</span>
                             </div>
                             <span className="text-lg font-semibold text-gray-900">ProfitDoctor</span>
                         </div>
@@ -177,8 +181,8 @@ export default function Home() {
                                 key={index}
                                 onClick={() => setCurrentSlide(index)}
                                 className={`w-3 h-3 rounded-full transition ${currentSlide === index
-                                        ? 'bg-emerald-500'
-                                        : 'bg-gray-300 hover:bg-gray-400'
+                                    ? 'bg-emerald-500'
+                                    : 'bg-gray-300 hover:bg-gray-400'
                                     }`}
                                 aria-label={`Go to slide ${index + 1}`}
                             />
@@ -192,8 +196,8 @@ export default function Home() {
                                 key={index}
                                 onClick={() => setCurrentSlide(index)}
                                 className={`text-sm px-3 py-1 rounded-full transition ${currentSlide === index
-                                        ? 'bg-emerald-100 text-emerald-700 font-medium'
-                                        : 'text-gray-500 hover:text-gray-700'
+                                    ? 'bg-emerald-100 text-emerald-700 font-medium'
+                                    : 'text-gray-500 hover:text-gray-700'
                                     }`}
                             >
                                 {label}
@@ -494,8 +498,10 @@ export default function Home() {
                 <div className="max-w-5xl mx-auto">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                         <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
-                                <span className="text-white text-sm font-bold">P</span>
+                            <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center relative overflow-hidden">
+                                <div className="absolute w-2 h-5 bg-white rounded-sm"></div>
+                                <div className="absolute w-5 h-2 bg-white rounded-sm"></div>
+                                <span className="relative text-emerald-500 text-[10px] font-bold">$</span>
                             </div>
                             <span className="text-lg font-semibold text-gray-900">ProfitDoctor</span>
                         </div>
