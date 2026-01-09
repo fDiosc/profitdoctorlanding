@@ -8,6 +8,10 @@ export const metadata: Metadata = {
     title: "ProfitDoctor - Find Hidden Profit Leaks in Your Shopify Store",
     description: "Discover in 10 minutes how much money your store is losing and exactly what to do to recover it. AI-powered diagnosis for Shopify stores.",
     keywords: ["Shopify", "profit", "analytics", "ecommerce", "store audit", "AI"],
+    icons: {
+        icon: "/favicon.svg",
+        apple: "/logo.svg",
+    },
     openGraph: {
         title: "ProfitDoctor - Find Hidden Profit Leaks",
         description: "AI-powered Shopify store diagnosis. Find profit leaks in 10 minutes.",

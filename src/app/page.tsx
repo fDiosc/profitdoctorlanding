@@ -120,41 +120,60 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Storylane Demo Section */}
+            {/* App Screenshots Section */}
             <section id="demo" className="py-20 px-6 bg-gray-50">
-                <div className="max-w-5xl mx-auto">
+                <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-semibold text-gray-900 mb-4">
                             See ProfitDoctor in action
                         </h2>
                         <p className="text-gray-500 text-lg">
-                            Interactive demo — click through to explore the diagnosis experience
+                            Real diagnosis results from a Shopify store
                         </p>
                     </div>
 
-                    {/* Storylane Embed Container */}
-                    <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-gray-900/10 border border-gray-200 bg-white">
-                        <div className="aspect-[16/9] w-full">
-                            {/* Replace DEMO_ID with your actual Storylane demo ID */}
-                            <iframe
-                                src="https://app.storylane.io/demo/DEMO_ID"
-                                title="ProfitDoctor Demo"
-                                className="w-full h-full"
-                                allow="fullscreen"
-                                style={{ border: 'none' }}
+                    {/* Screenshots Grid */}
+                    <div className="grid md:grid-cols-2 gap-6">
+                        {/* Main Screenshot */}
+                        <div className="md:col-span-2 relative rounded-2xl overflow-hidden shadow-2xl shadow-gray-900/10 border border-gray-200 bg-white">
+                            <img
+                                src="/images/screenshot-1.png"
+                                alt="ProfitDoctor Diagnosis Results - Store Health Score"
+                                className="w-full h-auto"
                             />
-                            {/* Placeholder when no demo ID */}
-                            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-50">
-                                <div className="text-center">
-                                    <div className="w-20 h-20 bg-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                        <span className="text-3xl text-gray-400">▶</span>
-                                    </div>
-                                    <p className="text-gray-500 font-medium">Interactive Demo</p>
-                                    <p className="text-gray-400 text-sm">Replace with your Storylane embed</p>
-                                </div>
-                            </div>
+                        </div>
+
+                        {/* Secondary Screenshots */}
+                        <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-gray-900/5 border border-gray-200 bg-white">
+                            <img
+                                src="/images/screenshot-2.png"
+                                alt="Health Metrics - Revenue, Customer, Product, Operations"
+                                className="w-full h-auto"
+                            />
+                        </div>
+
+                        <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-gray-900/5 border border-gray-200 bg-white">
+                            <img
+                                src="/images/screenshot-3.png"
+                                alt="Problems Identified with Dollar Impact"
+                                className="w-full h-auto"
+                            />
+                        </div>
+
+                        {/* Quick Wins Screenshot */}
+                        <div className="md:col-span-2 relative rounded-2xl overflow-hidden shadow-xl shadow-gray-900/5 border border-gray-200 bg-white">
+                            <img
+                                src="/images/screenshot-4.png"
+                                alt="Quick Wins - Actionable Tasks"
+                                className="w-full h-auto"
+                            />
                         </div>
                     </div>
+
+                    {/* Caption */}
+                    <p className="text-center text-gray-400 text-sm mt-6">
+                        ☝️ Actual diagnosis from a real Shopify store
+                    </p>
                 </div>
             </section>
 
