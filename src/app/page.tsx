@@ -5,6 +5,7 @@ import { useState } from 'react';
 export default function Home() {
     const [email, setEmail] = useState('');
     const [submitted, setSubmitted] = useState(false);
+    const [currentSlide, setCurrentSlide] = useState(0);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -122,7 +123,7 @@ export default function Home() {
 
             {/* App Screenshots Section */}
             <section id="demo" className="py-20 px-6 bg-gray-50">
-                <div className="max-w-6xl mx-auto">
+                <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-semibold text-gray-900 mb-4">
                             See ProfitDoctor in action
@@ -132,42 +133,72 @@ export default function Home() {
                         </p>
                     </div>
 
-                    {/* Screenshots Grid */}
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {/* Main Screenshot */}
-                        <div className="md:col-span-2 relative rounded-2xl overflow-hidden shadow-2xl shadow-gray-900/10 border border-gray-200 bg-white">
+                    {/* Carousel */}
+                    <div className="relative">
+                        {/* Main Image */}
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-gray-900/10 border border-gray-200 bg-white">
                             <img
-                                src="/images/screenshot-1.png"
-                                alt="ProfitDoctor Diagnosis Results - Store Health Score"
+                                src={`/images/screenshot-${currentSlide + 1}.png`}
+                                alt={[
+                                    'Store Health Score & Impact',
+                                    'Health Metrics Dashboard',
+                                    'Problems Identified',
+                                    'Quick Wins Checklist'
+                                ][currentSlide]}
                                 className="w-full h-auto"
                             />
                         </div>
 
-                        {/* Secondary Screenshots */}
-                        <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-gray-900/5 border border-gray-200 bg-white">
-                            <img
-                                src="/images/screenshot-2.png"
-                                alt="Health Metrics - Revenue, Customer, Product, Operations"
-                                className="w-full h-auto"
-                            />
-                        </div>
+                        {/* Navigation Arrows */}
+                        <button
+                            onClick={() => setCurrentSlide((prev) => (prev === 0 ? 3 : prev - 1))}
+                            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 transition"
+                            aria-label="Previous slide"
+                        >
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button
+                            onClick={() => setCurrentSlide((prev) => (prev === 3 ? 0 : prev + 1))}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 transition"
+                            aria-label="Next slide"
+                        >
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
 
-                        <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-gray-900/5 border border-gray-200 bg-white">
-                            <img
-                                src="/images/screenshot-3.png"
-                                alt="Problems Identified with Dollar Impact"
-                                className="w-full h-auto"
+                    {/* Dots Indicator */}
+                    <div className="flex justify-center gap-2 mt-6">
+                        {[0, 1, 2, 3].map((index) => (
+                            <button
+                                key={index}
+                                onClick={() => setCurrentSlide(index)}
+                                className={`w-3 h-3 rounded-full transition ${currentSlide === index
+                                        ? 'bg-emerald-500'
+                                        : 'bg-gray-300 hover:bg-gray-400'
+                                    }`}
+                                aria-label={`Go to slide ${index + 1}`}
                             />
-                        </div>
+                        ))}
+                    </div>
 
-                        {/* Quick Wins Screenshot */}
-                        <div className="md:col-span-2 relative rounded-2xl overflow-hidden shadow-xl shadow-gray-900/5 border border-gray-200 bg-white">
-                            <img
-                                src="/images/screenshot-4.png"
-                                alt="Quick Wins - Actionable Tasks"
-                                className="w-full h-auto"
-                            />
-                        </div>
+                    {/* Slide Labels */}
+                    <div className="flex justify-center gap-4 mt-4 flex-wrap">
+                        {['Health Score', 'Metrics', 'Problems', 'Quick Wins'].map((label, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setCurrentSlide(index)}
+                                className={`text-sm px-3 py-1 rounded-full transition ${currentSlide === index
+                                        ? 'bg-emerald-100 text-emerald-700 font-medium'
+                                        : 'text-gray-500 hover:text-gray-700'
+                                    }`}
+                            >
+                                {label}
+                            </button>
+                        ))}
                     </div>
 
                     {/* Caption */}
