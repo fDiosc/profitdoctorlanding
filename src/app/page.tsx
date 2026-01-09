@@ -101,6 +101,22 @@ export default function Home() {
                             <span>Actionable fixes</span>
                         </div>
                     </div>
+
+                    {/* Social Proof */}
+                    <div className="mt-16 flex flex-wrap justify-center gap-6 md:gap-10">
+                        <div className="flex items-center gap-2 bg-gray-50 px-5 py-3 rounded-full border border-gray-100">
+                            <span className="text-xl">🚀</span>
+                            <span className="text-gray-600 text-sm font-medium">Launched January 2026</span>
+                        </div>
+                        <div className="flex items-center gap-2 bg-gray-50 px-5 py-3 rounded-full border border-gray-100">
+                            <span className="text-xl">📊</span>
+                            <span className="text-gray-600 text-sm font-medium">Already analyzing $2M+ in store revenue</span>
+                        </div>
+                        <div className="flex items-center gap-2 bg-gray-50 px-5 py-3 rounded-full border border-gray-100">
+                            <span className="text-xl">⭐</span>
+                            <span className="text-gray-600 text-sm font-medium">Built by e-commerce experts</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -290,6 +306,46 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* FAQ Section */}
+            <section id="faq" className="py-20 px-6 bg-gray-50">
+                <div className="max-w-3xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-semibold text-gray-900 mb-4">
+                            Frequently asked questions
+                        </h2>
+                        <p className="text-gray-500 text-lg">
+                            Everything you need to know about ProfitDoctor
+                        </p>
+                    </div>
+
+                    <div className="space-y-6">
+                        {[
+                            {
+                                q: 'Is my data safe?',
+                                a: 'Yes, we only request read-only access to your store data. We never modify anything in your store, and your data is encrypted and never shared with third parties.'
+                            },
+                            {
+                                q: 'How long does a diagnosis take?',
+                                a: 'About 10 minutes for stores with up to 10,000 orders. Larger stores may take a bit longer, but you can continue using Shopify while we analyze.'
+                            },
+                            {
+                                q: 'What if I don\'t agree with the diagnosis?',
+                                a: 'Our AI provides evidence for every problem it identifies, including specific data points and calculations. You can see exactly why each issue was flagged.'
+                            },
+                            {
+                                q: 'Will this work for my store size?',
+                                a: 'ProfitDoctor works for stores from $0 to $10M+ GMV. Whether you\'re just starting or scaling fast, we adapt our analysis to your stage.'
+                            },
+                        ].map((item, i) => (
+                            <div key={i} className="bg-white border border-gray-200 rounded-2xl p-6">
+                                <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.q}</h3>
+                                <p className="text-gray-500 leading-relaxed">{item.a}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Pricing Section */}
             <section id="pricing" className="py-20 px-6 bg-gray-50">
                 <div className="max-w-lg mx-auto">
@@ -346,9 +402,15 @@ export default function Home() {
                     <h2 className="text-3xl font-semibold text-gray-900 mb-4">
                         Not on Shopify yet?
                     </h2>
-                    <p className="text-gray-500 text-lg mb-8">
-                        Join our waitlist and we&apos;ll notify you when we launch on other platforms.
+                    <p className="text-gray-500 text-lg mb-4">
+                        Join our waitlist for other platforms.
                     </p>
+
+                    {/* Incentive Badge */}
+                    <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-2 mb-8">
+                        <span className="text-lg">🎁</span>
+                        <span className="text-amber-700 text-sm font-medium">Early access + 50% off when we launch</span>
+                    </div>
 
                     {!submitted ? (
                         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -371,7 +433,7 @@ export default function Home() {
                         <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 max-w-md mx-auto">
                             <span className="text-2xl mb-2 block">🎉</span>
                             <p className="text-emerald-800 font-medium">You&apos;re on the list!</p>
-                            <p className="text-emerald-600 text-sm">We&apos;ll notify you when we expand to other platforms.</p>
+                            <p className="text-emerald-600 text-sm">You&apos;ll get early access + 50% off when we launch on your platform.</p>
                         </div>
                     )}
                 </div>
